@@ -146,9 +146,7 @@ namespace SchereSteinPapierEchseSpock
                                 Console.WriteLine("Echse vergiftet Spock");
                                 Console.WriteLine("Spieler gewinnt");
                                 break;
-
                         }
-
                         break;
                     case 5:
                         switch (computerZahl)
