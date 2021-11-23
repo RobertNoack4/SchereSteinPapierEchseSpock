@@ -13,10 +13,31 @@ namespace SchereSteinPapierEchseSpock
             Console.WriteLine("3 = Papier");
             Console.WriteLine("4 = Echse");
             Console.WriteLine("5 = Spock");
+            
             Console.WriteLine("Geben sie eine Zahl zwischen 1 und 5 ein!");
+            bool fehler;
+            int spielerZahl = 0;
+            do
+            {
+                fehler = false;
+                try
+                {
+                    spielerZahl = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Bitte geben sie eine ZAHL zwischen 1 und 5 ein!");
+                    fehler = true;
+                    spielerZahl = 1;
+                }
 
-
-            int spielerZahl = Convert.ToInt32(Console.ReadLine());
+                if (spielerZahl < 1 || spielerZahl > 5)
+                {
+                    Console.WriteLine("Bitte geben sie eine Zahl ZWISCHEN 1 UND 5 ein!");
+                    fehler = true;
+                }
+                
+            } while (fehler);
             Random rnd = new Random();
             int computerZahl = rnd.Next(1, 6);
 
